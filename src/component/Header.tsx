@@ -1,29 +1,24 @@
-import React, {FC} from "react";
-import sunimg from '@/assets/images/sun.svg'
-import moonimg from '@/assets/images/moon.svg'
+import React, { FC } from "react";
+import sunImg from "@/assets/images/sun.svg";
+import moonImg from "@/assets/images/moon.svg";
 import Image from "next/image";
 
-interface HearderType {
-    toggleDarkMode: () => void
-    isDarkMode: boolean
+interface HeaderProps {
+    toggleDarkMode: () => void;
+    isDarkMode: boolean;
 }
 
-const Header: FC<HearderType> = ({toggleDarkMode, isDarkMode}) => {
+const Header: FC<HeaderProps> = ({ toggleDarkMode, isDarkMode }) => {
     return (
-        <>
-
-            <div
-                className={'flex justify-between  py-4 text-2xl p-3 dark:text-[#9eb8cf] dark:bg-[#091319] text-white bg-blue-500'}>
-
-                <div>
-
-                    <span className="text-4xl font-semi-bold ">Todo</span>
-
-                </div>
-
-                <button onClick={toggleDarkMode} className={'p-2'}>       {!isDarkMode ? <Image src={sunimg} alt="Sun" /> : <Image src={moonimg} alt="Moon" />} </button>
+        <header className="flex justify-between items-center py-4 px-3 text-2xl bg-blue-500 dark:bg-[#091319] text-white dark:text-[#9eb8cf]">
+            <div>
+                <h1 className="text-4xl font-semibold">Todo</h1>
             </div>
-        </>
-    )
-}
-export default Header
+            <button onClick={toggleDarkMode} className="p-2">
+                <Image src={isDarkMode ? moonImg : sunImg} alt={isDarkMode ? "Moon" : "Sun"} />
+            </button>
+        </header>
+    );
+};
+
+export default Header;

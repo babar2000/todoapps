@@ -1,14 +1,11 @@
 import React from "react";
 
-const Footer  = () => {
-
+const Footer = () => {
     return (
-        <>
-            <footer className={`p-4 text-center   dark:text-[#9eb8cf] dark:bg-[#091319] text-white  bg-blue-500 `}>
-                <p>&copy; 2023 . All Rights Reserved.</p>
-            </footer>
+        <footer className="p-4 text-center text-white bg-blue-500 dark:bg-[#091319] dark:text-[#9eb8cf]">
+            <p>&copy; {new Date().getFullYear()} ZB Aliance. All content is protected by intellectual property laws.</p>
+        </footer>
+    );
+};
 
-        </>
-    )
-}
-export default Footer
+export default Footer;
